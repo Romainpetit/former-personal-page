@@ -903,9 +903,14 @@ select {
     position: relative;
     width: 100%; }
 
+
   .large-offset-0 {
     position: relative;
     margin-left: 0%; }
+
+  .large-offset-half {
+    position: relative;
+    margin-left: 4.16665%; }
 
   .large-offset-1 {
     position: relative;
@@ -1768,9 +1773,9 @@ button, .button {
 /* Panels */
 .panel {
 padding: 0;
-margin-top: -3px;
-  background: #eeeeee;
-  box-shadow:0px 5px 0px 0.9375em rgba(0, 0, 0, 0.2) }
+margin-top: 0px;
+  background: #11191B;
+  box-shadow:0px 5px 0px 0.9375em rgba(0, 0, 0, 0.4) }
   .panel > :first-child {
     margin-top: 0; }
   .panel > :last-child {
@@ -2250,7 +2255,7 @@ a {
 p {
   font-family: inherit;
   font-weight: normal;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   line-height: 1.48;
   margin-bottom: 1.25rem;
   text-rendering: optimizeLegibility; }
@@ -2260,7 +2265,7 @@ p {
     font-style: italremic; }
 
 .row.firstrow {
-margin-top: 4rem;
+margin-top: 8rem;
 }
 
 .large-8.large-offset-2.medium-10.medium-offset-1.columns {
@@ -2455,10 +2460,6 @@ blockquote p {
   p {
     font-size: 1.4rem;
   } 
-
-.row.firstrow {
-margin-top: 8rem;
-}
 
 .large-8.large-offset-2.medium-10.medium-offset-1.columns {
 margin-bottom: 8em;
@@ -4362,7 +4363,7 @@ th.show-for-portrait {
   display: inherit !important; }
 
 .touch .show-for-touch {
-  display: inherit !important; }
+  display: inline-block !important; }
 
 .touch .hide-for-touch {
   display: none !important; }

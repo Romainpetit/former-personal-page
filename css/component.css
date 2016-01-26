@@ -14,7 +14,7 @@
 	width: 100%;
 	position: relative;
 	padding-top: 0px;
-	margin: 10px 0;
+	margin: 10px 0 3em;
 }
 
 .md-slider > nav {
@@ -28,7 +28,7 @@
 	display: inline-block;
 	width: 14px;
 	height: 14px;
-	background: #cfcfcf;
+	background: rgba(41, 109, 130, 0.2);
 	margin: 3px;
 	border-radius: 2px;
 	outline: none;
@@ -42,7 +42,7 @@
 
 .md-slider > nav a:hover,
 .md-slider > nav a.md-current {
-	background: #aaa;
+	background: rgba(41, 109, 130, 0.4);
 }
 
 /* General style for all devices */
@@ -58,7 +58,9 @@
 	position: relative;
 	display: inline-block;
 	border-radius: 5px;
-	background-color: #111;
+	border: 2px solid #7ebccf;
+	background-color: transparent;
+	box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
 	-webkit-transform: translateY(0px);
 	-moz-transform: translateY(0px);
 	-ms-transform: translateY(0px);
@@ -73,6 +75,7 @@
 
 .md-device > a {
 	position: relative;
+	background: #184250;
 }
 
 .md-device > a img {
@@ -116,7 +119,7 @@
 
 .md-device:before,
 .md-device:after {
-	background: #000;
+	background: #213136;
 }
 
 .md-device:before {
@@ -145,17 +148,24 @@
 	border: none;
 	color: #fff;
 	background: #101010;
+	background: rgba(16, 16, 16, 0.8);
 	text-align: center;
 	cursor: pointer;
 	margin: -25px 0 0 -25px;
-	opacity: 0;
 	outline: none;
 	padding: 0;
+	-webkit-transform: scale(0);
+	-moz-transform: scale(0);
+	-ms-transform: scale(0);
+	transform: scale(0);
 }
 
 .md-device:hover button,
 .touch .md-device button {
-	opacity: 1;
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
 }
 
 .md-device button:before {
@@ -182,6 +192,7 @@
 /* Let's predefine some properties so that transitions happen smoothly */
 .md-border-element,
 .md-base-element,
+.md-base-element2,
 .md-border-element:after {
 	opacity: 0;
 }
@@ -206,14 +217,15 @@
 	height: 60px;
 	border-radius: 0 0 5px 5px;
 	top: 100%;
-	width: 100%;
-	background: #cfcfcf;
+	width: 756px;
+	background: #213136;
 	left: 50%;
+	box-shadow: 0px 0px 0px 2px #7ebccf;
 }
 
 /* md-border-element:after; -- grey inset opending macbook */
 .md-border-element:after {
-	background: #aaa;
+	background: rgba(0, 0, 0, 0.3);
 	width: 100px;
 	border-radius: 0 0 6px 6px;
 	height: 10px;
@@ -235,19 +247,20 @@
 	width: 160px;
 	height: 0;
 	background: transparent;
-	border-bottom: 60px solid #cfcfcf;
+	border-bottom: 61px solid #213136;
 	border-left: 15px solid transparent;
 	border-right: 15px solid transparent;
 	-webkit-transform: translateY(60px) translateX(-50%) translateY(-75%);
 	-moz-transform: translateY(60px) translateX(-50%) translateY(-75%);
 	-ms-transform: translateY(60px) translateX(-50%) translateY(-75%);
 	transform: translateY(60px) translateX(-50%) translateY(-75%);
-	z-index: -1;
+	z-index: 1;
+	text-shadow: 0px 0px 2px #7ebccf;
 }
 
 /* md-base-element:after -- socket of base imac */
 .md-base-element:after {
-	background: #cfcfcf;
+	background: #1B282C;
 	border-radius: 30px 30px 10px 10px;
 	width: 260px;
 	height: 12px;
@@ -255,7 +268,11 @@
 	-moz-transform: translateY(60px) translateX(-50%);
 	-ms-transform: translateY(60px) translateX(-50%);
 	transform: translateY(60px) translateX(-50%);
+	border: 2px solid #7ebccf;
+border-top: 0px;
 }
+
+
 
 /* Device 1 (large monitor) */
 .md-device-1 {
@@ -270,14 +287,48 @@
 
 .md-device-1 .md-border-element {
 	opacity: 1;
+	padding: 2px;
 }
 
-.md-device-1 .md-base-element {
+.md-device-1 .md-base-element{
 	opacity: 1;
 	-webkit-transform: translateY(40px) translateX(-50%) translateY(0);
 	-moz-transform: translateY(40px) translateX(-50%) translateY(0);
 	-ms-transform: translateY(40px) translateX(-50%) translateY(0);
 	transform: translateY(40px) translateX(-50%) translateY(0);
+}
+
+.md-base-element2 {
+  -webkit-transition: all 0.1ms ease-in;
+  -moz-transition: all 0.1ms ease-in;
+  transition: all 0.1ms ease-in; 
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	top: 105%;
+	left: 50%;
+	width: 164px;
+	height: 0;
+	background: transparent;
+	border-bottom: 60px solid #7ebccf;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+		-webkit-transform: translateY(60px) translateX(-50%) translateY(-75%);
+	-moz-transform: translateY(60px) translateX(-50%) translateY(-75%);
+	-ms-transform: translateY(60px) translateX(-50%) translateY(-75%);
+	transform: translateY(60px) translateX(-50%) translateY(-75%);
+z-index: -1;
+	}
+
+.md-device-1 .md-base-element2 {
+	opacity: 1;
+  transition-delay: 0.2s;
+-webkit-transition-delay: 0.2s; /* Safari */
+-webkit-transform: translateY(60px) translateX(-50%) translateY(-75%);
+-moz-transform: translateY(60px) translateX(-50%) translateY(-75%);
+-ms-transform: translateY(60px) translateX(-50%) translateY(-75%);
+transform: translateY(60px) translateX(-50%) translateY(-75%);
+
 }
 
 /* Device 2 (laptop) */
@@ -295,7 +346,7 @@
 	opacity: 1;
 	width: 125%;
 	height: 35px;
-	background: #cfcfcf;
+	background: #213136;
 	border-radius: 0 0 20px 20px;
 }
 
@@ -310,6 +361,12 @@
 	-moz-transform: translateY(40px);
 	-ms-transform: translateY(40px);
 	transform: translateY(40px);
+}
+
+.md-device-3 .md-border-element, .md-device-3 .md-base-element, .md-device-3 .md-base-element2, .md-device-3 .md-base-element:after, .md-device-3 .md-border-element:after {
+width: 100%;
+height: 0px;
+border: 0;
 }
 
 .md-device-3.md-rotated {
@@ -345,6 +402,12 @@
 	-moz-transform: translateY(50px);
 	-ms-transform: translateY(50px);
 	transform: translateY(50px);
+}
+
+.md-device-4 .md-border-element, .md-device-4 .md-base-element, .md-device-4 .md-base-element2, .md-device-4 .md-base-element:after, .md-device-4 .md-border-element:after {
+width: 100%;
+height: 0px;
+border: 0;
 }
 
 .md-device-4.md-rotated {
@@ -384,6 +447,14 @@
 	transition: all 0.3s;
 }
 
+.md-device > a img, .md-device > a img.md-fadeout {
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+
+
 .md-base-element,
 .md-device:after,
 .md-border-element:after {
@@ -408,12 +479,13 @@
 	-webkit-transition: opacity 0.5s linear;
 	-moz-transition: opacity 0.5s linear;
 	transition: opacity 0.5s linear;
+	cursor: default;
 }
 
 .md-device button {
-	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
-	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
-	transition: transform 0.3s, opacity 0.3s;
+	-webkit-transition: -webkit-transform 0.1s, opacity 0.1s;
+	-moz-transition: -moz-transform 0.1s, opacity 0.1s;
+	transition: transform 0.1s, opacity 0.1s;
 }
 /*
 @media screen and (max-width: 850px){

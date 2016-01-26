@@ -2,7 +2,7 @@ function Banner(){
 	
 	var canvas, context,
 		bgCanvas, bgContext,
-		density 	= 60,
+		density 	= 80,
 		particles 	= [],
 		colours 	= ['#194250', '#296D83', '#13333D', '#235E70', '#19424F', '#286D82', '#1C4B59', '#2C788F', '#225C6E', '#3289A3'],
 		img,
@@ -79,7 +79,7 @@ var width = $(window).width();
 
 			
 			//Iterate vertically over image data 
-			for( var height = 0; height < canvasH; height += density-8 ) {
+			for( var height = 0; height < canvasH; height += density-10 ) {
 			
 			i++;
 	    	slide 	= ((i % 2) == 0);
@@ -87,7 +87,7 @@ var width = $(window).width();
 			
 			if (slide == true) {
 			
-	        	width += 30;
+	        	width += 40;
 			}
 			
 			//Iterate horizontally over the image data
@@ -100,7 +100,8 @@ var width = $(window).width();
 
 					//Add the coodinates and colour to our particle array.
 					particles.push({
-						colour	: colours[ Math.floor( Math.random() * colours.length ) ],
+						// colour	: colours[ Math.floor( Math.random() * colours.length ) ],
+						colour	: colours[ ( width % 3 ) ],
 
 						x		: width,
 						y		: height,
