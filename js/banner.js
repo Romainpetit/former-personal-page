@@ -4,13 +4,16 @@ function Banner(){
 		bgCanvas, bgContext,
 		density 	= 80,
 		particles 	= [],
-		colours 	= ['#194250', '#296D83', '#13333D', '#235E70', '#19424F', '#286D82', '#1C4B59', '#2C788F', '#225C6E', '#3289A3'],
+		colours 	= ['#194250', '#296D83', '#13333D'],
 		img,
 		mouse 		= { x:0, y:0 },
 		isDrawing	= false,
+					isBW = false,
 		canvasW, canvasH;
 	
 	this.initialize 	= function( canvas_id, font ) {
+
+
 		
 		if( font )
 			defaultFont = font;
@@ -19,15 +22,7 @@ function Banner(){
 		
 var width = $(window).width(); 
 
-		
-		window.onresize = function(event) {
-			    // do nothing if the width is the same
-    if ($(window).width()==width) return; 
-    // update new width value
-    width = $(window).width();
-    // ... your code
-			reload( canvas_id );
-		}
+
 
 	};
 	
@@ -65,11 +60,13 @@ var width = $(window).width();
 		
 		particles = [];
 
+
+
 		
 		//Declare our local variables
 		var imageData, image_Data, 
 			pixel, width	= 0,
-			i		= 0,
+			i		= 0,			
 			slide 	= false;
 			n = 1;
 			
@@ -147,6 +144,7 @@ var width = $(window).width();
 			scale = 1.3;
 
 
+
 		// particles.sort(function(a,b){return a.z-b.z});
  		
  		for( var i = 0, len = particles.length; i < len; ++i ) {
@@ -193,8 +191,12 @@ var width = $(window).width();
 				// grd.addColorStop(0,"rgba(0, 0, 0, 0.8)");
 				// grd.addColorStop(1,"rgba(0, 0, 0, 0)");
 				// context.strokeStyle=grd;
-
+if ( isBW  == true ){
+			context.strokeStyle="rgba(0,0,0," + temps +")"
+} else {
+			 
 			context.strokeStyle="rgba(0,0,0,0.1)";
+		}
 			context.lineWidth=Math.floor(1/(scale/10));
 				// 			for( var i = 0; i < p.length; i+=5 ) {
 				// 			context.fillStyle = "#fffff";
@@ -282,4 +284,44 @@ var width = $(window).width();
 
 		draw();
 	};
+
+var temps = 0.1;
+var opacite = 0;
+
+// 			      $('.btn-nice').hover(
+//   function() {
+// 		isDrawing = true;
+// 		isBW = true;
+
+// 		mouse.x = event.clientY;
+// 		mouse.y = event.clientX;
+
+// 	   var opacitemin = setInterval(function(){ temps = temps - 0.001;
+// 			draw(); 
+// 	   },30);
+// 	   console.log('in');
+//      }, function() {
+
+
+// 		console.log(temps);
+
+// 		  }).mouseout(function() {
+
+// 		temps = 0;
+
+// 		  	   var opaciteplus = setInterval(function(){ temps = temps + 0.001;
+// 				draw(); 
+// 		   },30);
+
+
+// 		setTimeout( "temps = 0.1;", 3000);
+// 		isBW = false;
+// 		isDrawing = false;
+// 		console.log('out');
+//   }
+// );
+
+// temps = 0.1;
+
+
 }
